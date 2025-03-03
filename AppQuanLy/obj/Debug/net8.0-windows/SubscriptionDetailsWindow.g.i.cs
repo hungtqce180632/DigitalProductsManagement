@@ -125,7 +125,7 @@ namespace SubscriptionManagementWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AppQuanLy;V1.0.0.0;component/subscriptiondetailswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AppQuanLy;component/subscriptiondetailswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SubscriptionDetailsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace SubscriptionManagementWPF
+namespace AppQuanLy.Converters
 {
     public class IsNearExpiryConverter : IValueConverter
     {

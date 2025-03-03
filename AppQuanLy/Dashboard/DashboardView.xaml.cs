@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using AppQuanLy.Models; // Add reference to the new namespace
 
 namespace SubscriptionManagementWPF.Dashboard
 {
@@ -164,4 +165,25 @@ namespace SubscriptionManagementWPF.Dashboard
                     Width = 15,
                     Height = 15,
                     Fill = new SolidColorBrush(chartColors[i % chartColors.Length]),
-                    Margin = new Thickness(0, 0, 
+                    Margin = new Thickness(0, 0, 5, 0)
+                };
+                
+                TextBlock labelText = new TextBlock {
+                    Text = $"{labels[i]}: {counts[i]} ({percentage:P1})",
+                    VerticalAlignment = VerticalAlignment.Center
+                };
+                
+                legendItem.Children.Add(colorBox);
+                legendItem.Children.Add(labelText);
+                
+                PackageLegend.Children.Add(legendItem);
+            }
+        }
+        
+        private void CreateExpiryTimeline(IEnumerable<Customer> customers)
+        {
+            // Implementation for expiry timeline
+            // You can add your timeline visualization code here
+        }
+    }
+}

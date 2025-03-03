@@ -3,10 +3,13 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using SubscriptionManagementWPF;
+using SubscriptionManagementWPF.Properties;
 
 namespace SubscriptionManagementWPF
 {
-    public static class MessengerConfig
+    // Renamed class to avoid ambiguity
+    public static class FacebookMessengerConfig
     {
         public static string PageAccessToken { get; set; }
         public static string DefaultRecipientId { get; set; }
@@ -26,7 +29,10 @@ namespace SubscriptionManagementWPF
             DefaultRecipientId = Properties.Settings.Default.DefaultRecipientId;
         }
     }
+}
 
+namespace AppQuanLy.Services
+{
     public static class FacebookMessengerService
     {
         private static readonly HttpClient client = new HttpClient();
@@ -34,7 +40,7 @@ namespace SubscriptionManagementWPF
 
         public static async Task<bool> SendMessageAsync(string recipientId, string messageText)
         {
-            if (string.IsNullOrEmpty(MessengerConfig.PageAccessToken))
+            if (string.IsNullOrEmpty(FacebookMessengerConfig.PageAccessToken))
             {
                 return false;
             }
@@ -53,7 +59,7 @@ namespace SubscriptionManagementWPF
                 // This is a simulated call - in a real app, you'd uncomment this to send to FB API
                 /*
                 var content = new StringContent(messageJson, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync($"{ApiUrl}?access_token={MessengerConfig.PageAccessToken}", content);
+                var response = await client.PostAsync($"{ApiUrl}?access_token={FacebookMessengerConfig.PageAccessToken}", content);
                 return response.IsSuccessStatusCode;
                 */
 

@@ -77,8 +77,9 @@
                     <!-- Search Area -->
                     <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
                         <TextBox x:Name="SearchTextBox" Width="250" Margin="0,0,10,0" 
-                                 Style="{StaticResource ModernTextBox}" 
-                                 PlaceholderText="Search by name, package or date"/>
+                                 Style="{StaticResource ModernTextBox}">
+                            <TextBox.Tag>Search by name, package or date</TextBox.Tag>
+                        </TextBox>
                         <Button x:Name="SearchButton" Content="Search" Click="SearchButton_Click" 
                                 Style="{StaticResource ModernButton}"/>
                         <Button x:Name="RefreshCustomerListButton" Content="Refresh" Click="RefreshCustomerList_Click" 
@@ -204,8 +205,9 @@
                             
                             <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
                                 <TextBox x:Name="IncomingMessageTextBox" Width="300" Margin="0,0,10,0" 
-                                         Style="{StaticResource ModernTextBox}" 
-                                         PlaceholderText="Simulate incoming message"/>
+                                         Style="{StaticResource ModernTextBox}">
+                                    <TextBox.Tag>Simulate incoming message</TextBox.Tag>
+                                </TextBox>
                                 <Button x:Name="SimulateIncomingMessageButton" Content="Simulate" Click="SimulateIncomingMessage_Click" 
                                         Style="{StaticResource ModernButton}"/>
                             </StackPanel>
@@ -254,9 +256,9 @@
                 <Grid Margin="10">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Label Content="Page Access Token:" Style="{StaticResource ModernLabel}"/>
-                        <TextBox x:Name="PageAccessTokenTextBox" Width="400" Margin="5" Style="{StaticResource ModernTextBox}"/>
+                        <TextBox x:Name="PageAccessTokenSetupTextBox" Width="400" Margin="5" Style="{StaticResource ModernTextBox}"/>
                         <Label Content="Default Recipient ID:" Style="{StaticResource ModernLabel}"/>
-                        <TextBox x:Name="DefaultRecipientIdTextBox" Width="400" Margin="5" Style="{StaticResource ModernTextBox}"/>
+                        <TextBox x:Name="DefaultRecipientIdSetupTextBox" Width="400" Margin="5" Style="{StaticResource ModernTextBox}"/>
                         <Button Content="Save Configuration" Click="SaveMessengerConfig_Click" Width="150" Margin="5" Style="{StaticResource ModernButton}"/>
                         <Button Content="Refresh Messages" Click="RefreshMessengerMessages_Click" Width="150" Margin="5" Style="{StaticResource ModernButton}"/>
                         <TextBlock x:Name="MessengerStatusTextBlock" Margin="5" TextWrapping="Wrap" TextAlignment="Center"/>
@@ -299,7 +301,7 @@
             <TabItem Header="Account Inventory" Style="{StaticResource ModernTabItem}">
                 <Grid Margin="10">
                     <StackPanel>
-                        <DataGrid Name="AccountDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
+                        <DataGrid x:Name="AccountInventoryDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
                                   Style="{StaticResource ModernDataGrid}"
                                   ColumnHeaderStyle="{StaticResource ModernDataGridColumnHeader}"
                                   CellStyle="{StaticResource ModernDataGridCell}">

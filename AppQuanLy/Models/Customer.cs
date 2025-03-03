@@ -1,6 +1,6 @@
 using System;
 
-namespace SubscriptionManagementWPF
+namespace AppQuanLy.Models
 {
     public class Customer
     {

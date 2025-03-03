@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.Win32;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Windows.Media.Animation;
 
 namespace SubscriptionManagementWPF
 {

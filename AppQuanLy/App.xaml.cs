@@ -29,8 +29,8 @@ namespace SubscriptionManagementWPF
                 });
             });
             
-            // Set startup URI to null since we're handling it manually
-            StartupUri = null;
+            // Remove or comment out the line below
+            // StartupUri = null;
         }
     }
 }

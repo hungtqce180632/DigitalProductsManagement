@@ -64,3 +64,4 @@ D:\Projects\AppQuanLy\AppQuanLy\obj\Debug\net8.0-windows\SplashScreen.baml
 D:\Projects\AppQuanLy\AppQuanLy\obj\Debug\net8.0-windows\Themes\BlackYellowTheme.baml
 D:\Projects\AppQuanLy\AppQuanLy\obj\Debug\net8.0-windows\Dashboard\DashboardView.g.cs
 D:\Projects\AppQuanLy\AppQuanLy\obj\Debug\net8.0-windows\SplashScreen.g.cs
+D:\Projects\AppQuanLy\AppQuanLy\obj\Debug\net8.0-windows\Dashboard\DashboardView.baml

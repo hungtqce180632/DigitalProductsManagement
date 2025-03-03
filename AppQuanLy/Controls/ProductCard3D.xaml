@@ -1,0 +1,107 @@
+<UserControl x:Class="SubscriptionManagementWPF.Controls.ProductCard3D"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SubscriptionManagementWPF.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="220"
+             MouseEnter="UserControl_MouseEnter"
+             MouseLeave="UserControl_MouseLeave">
+    
+    <UserControl.Resources>
+        <Style x:Key="ProductCardPanel" TargetType="Border">
+            <Setter Property="Background" Value="#252525"/>
+            <Setter Property="BorderBrush" Value="#333333"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="2" BlurRadius="8" Opacity="0.5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="ProductTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        
+        <Style x:Key="ProductPrice" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#FFC107"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
+        
+        <Style x:Key="ProductDescription" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="#AAAAAA"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Border x:Name="MainBorder" Style="{StaticResource ProductCardPanel}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <!-- 3D Product Viewer -->
+                <Border Grid.Row="0" Background="#1A1A1A" CornerRadius="8,8,0,0" Height="150">
+                    <local:Product3DViewer x:Name="ProductViewer" Height="150"/>
+                </Border>
+                
+                <!-- Product Info -->
+                <Grid Grid.Row="1" Margin="15,15,15,15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" x:Name="TitleTextBlock" Text="Premium Package" Style="{StaticResource ProductTitle}"/>
+                    <TextBlock Grid.Row="1" x:Name="PriceTextBlock" Text="VND 660,000" Style="{StaticResource ProductPrice}"/>
+                    <TextBlock Grid.Row="2" x:Name="DescriptionTextBlock" Text="Enterprise grade digital product with premium support and extended features." Style="{StaticResource ProductDescription}"/>
+                    
+                    <Button Grid.Row="3" x:Name="ViewDetailsButton" Content="View Details" Style="{StaticResource ModernButton}" 
+                            Height="30" HorizontalAlignment="Stretch" Click="ViewDetailsButton_Click"/>
+                </Grid>
+                
+                <!-- Featured Badge -->
+                <Border x:Name="FeaturedBadge" Visibility="Collapsed" 
+                        Background="#FFC107" 
+                        Width="80" Height="80"
+                        HorizontalAlignment="Right" VerticalAlignment="Top"
+                        RenderTransformOrigin="1,0">
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="45"/>
+                            <TranslateTransform X="30" Y="-30"/>
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                    <TextBlock Text="FEATURED" 
+                               Foreground="#121212" 
+                               FontWeight="Bold" 
+                               FontSize="11"
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Bottom"
+                               Margin="0,0,0,15"
+                               RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <RotateTransform Angle="-45"/>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

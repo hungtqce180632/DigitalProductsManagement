@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\truon\Desktop\Projects\AppQuanLy\AppQuanLy\obj\Release\net8.0-windows\
+D:\Projects\AppQuanLy\AppQuanLy\obj\Release\net8.0-windows\
 AppQuanLy
 none
 false
-TRACE;RELEASE;NET;NET8_0;NETCOREAPP
-C:\Users\truon\Desktop\Projects\AppQuanLy\AppQuanLy\App.xaml
-61203334738
+TRACE;RELEASE;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+D:\Projects\AppQuanLy\AppQuanLy\App.xaml
+91203410627
 
-211634495949
-198-1431420039
-AccountDetailsWindow.xaml;AddSubscriptionWindow.xaml;DarkTheme.xaml;MainWindow.xaml;RenewSubscriptionWindow.xaml;SubscriptionDetailsWindow.xaml;
+30-576319093
+1981839832580
+AccountDetailsWindow.xaml;AddSubscriptionWindow.xaml;DarkTheme.xaml;Dashboard\DashboardView.xaml;MainWindow.xaml;RenewSubscriptionWindow.xaml;SplashScreen.xaml;SubscriptionDetailsWindow.xaml;Themes\BlackYellowTheme.xaml;
 
-False
+True
 
