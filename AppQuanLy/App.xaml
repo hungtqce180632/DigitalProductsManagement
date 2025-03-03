@@ -1,0 +1,14 @@
+﻿<Application x:Class="SubscriptionManagementWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SubscriptionManagementWPF"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/BlackYellowTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <local:IsNearExpiryConverter x:Key="IsNearExpiryConverter"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
